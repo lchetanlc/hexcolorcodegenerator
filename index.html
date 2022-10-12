@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Generator</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            display:grid;
+            place-items: center;
+            height:80vh;
+            font-size: 20px;
+        }
+        .main{
+            height: 300px;
+            width: 250px;
+            background-color:cadetblue;
+            border-radius: 10px;
+            display:grid;
+            place-items: center;
+            color:#fff;
+            font-family: Arial;
+            border-radius: 15px;
+        }
+        #colorGenerator{
+            background-color:none;
+            outline: none;
+            border: none;
+            height: 40px;
+            width: 60px;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <h2>Hex Color Code Generator</h2>
+    <div  class="main">
+        Color Generator: <input type="color" id="colorGenerator" value="#6a5afd"><br>
+        Hex Color Code: <input type="text"  id="box">
+    </div>
+    <script>
+        function myColor(){
+            var color = document.getElementById('colorGenerator').value;
+            document.body.style.backgroundColor = color;
+            document.getElementById('box').value = color;
+        }
+        myColor();
+        document.getElementById('colorGenerator').addEventListener('input', myColor);
+    </script>
+
+</body>
+</html>
